@@ -1,11 +1,12 @@
 // Assignment code here
 // Get references to the #generate element
+var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
-
+var passwordLength;
 function generatePassword() {
   var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
   var upperCaseCharacters = lowercaseCharacters.toUpperCase();
-  var Number ="0123456789";
+  var numberChar ="0123456789";
   var specialCharacters = "!@#$%^&*()";
   // var randomFunc = {
   //   lower: getRandomLower,
@@ -14,7 +15,7 @@ function generatePassword() {
   //   symbol: getRandomSymbol,
   // };
   var selection = "";
-  var passwordLength = prompt("What is the password length:at least 8 characters and no more than 128 characters");
+   passwordLength = parseInt(prompt("What is the password length:at least 8 characters and no more than 128 characters"));
   console.log(passwordLength);
   // Generate function
   var hasLower = confirm("Do you want lowercase letters ? Yes or No");
@@ -23,26 +24,43 @@ function generatePassword() {
   console.log(hasUpper);
   var hasNumber = confirm ("0123456789");
   console.log(hasNumber);
+  var hasSpecialCharacters = confirm("!@#$%^&*()");
+  console.log(hasSpecialCharacters);
 
-  if (hasLower === true) {
+  if (hasLower ) {
     selection = selection + lowercaseCharacters;
   }
-  if (hasUpper === true) {
+  if (hasUpper ) {
     selection = selection + upperCaseCharacters;
+  }
+  if (hasNumber){
+    selection = selection + numberChar;
+  }
+  if(hasSpecialCharacters){
+    selection = selection + specialCharacters;
   }
   console.log(selection);
 return selection;
 }
 
-function getRandomLower() {
-  return String.fromCharCode(math.floor(Math.random * 26) + 97);
+function generateRandom(characters) {
+var getRandom = "";
+for (var i=0;i<passwordLength;i++){
+  password += characters.characters(Math.floor(Math.random() * characters.length);
+}
+
+
+
+
+ return getRandom;
 }
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  
+
+  passwordText.value = generateRandom(password);
 
 }
 

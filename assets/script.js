@@ -18,13 +18,13 @@ function generatePassword() {
    passwordLength = parseInt(prompt("What is the password length:at least 8 characters and no more than 128 characters"));
   console.log(passwordLength);
   // Generate function
-  var hasLower = confirm("Do you want lowercase letters ? Yes or No");
+  var hasLower = confirm("Do you want lowercase letters ? click ok for yes ");
   console.log(hasLower);
-  var hasUpper = confirm("Do you want upperCase letters ? Yes or No");
+  var hasUpper = confirm("Do you want upperCase letters ? Click ok for  yes");
   console.log(hasUpper);
-  var hasNumber = confirm ("0123456789");
+  var hasNumber = confirm ("Do you want numbers in your password?");
   console.log(hasNumber);
-  var hasSpecialCharacters = confirm("!@#$%^&*()");
+  var hasSpecialCharacters = confirm("Do you want special Characters in your password?");
   console.log(hasSpecialCharacters);
 
   if (hasLower ) {
@@ -46,11 +46,9 @@ return selection;
 function generateRandom(characters) {
 var getRandom = "";
 for (var i=0;i<passwordLength;i++){
-  password += characters.characters(Math.floor(Math.random() * characters.length);
+  getRandom += characters[Math.floor(Math.random() * characters.length)];
+  console.log(password);
 }
-
-
-
 
  return getRandom;
 }
